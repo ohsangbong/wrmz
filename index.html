@@ -4,6 +4,60 @@
     <meta charset="UTF-8">
     <title>WORMS!</title>
   </head>
+  <style>
+    .inventory {
+      margin-top: 50px;
+      width: 1920px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 100px;
+      font-weight: 700;
+      color: rgb(241, 99, 99);
+    }
+
+    .item--list {
+      margin-top: 20px;
+      width: 1920px;
+      height: 300px;
+      background-color: #6f4f28;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      box-sizing: content-box;
+    }
+
+    .item--img {
+      width: 18%;
+      height: 80%;
+      border: 1px solid #323232;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+
+    .status {
+      margin-top: 50px;
+      width: 1920px;
+      display: flex;
+      justify-content: center;
+      font-size: 50px;
+      font-weight: 700;
+      color: rgb(0, 64, 255);
+      text-align: center;
+    }
+
+    .redColor{
+      color: red;
+    }
+
+
+  </style>
+
   <body style="overflow: hidden;">
     <canvas id="bg_canvas" width="320" height="320" style="border:1px solid black;">
         Sorry, your browser does not support the HTML5 canvas tag.
@@ -12,8 +66,23 @@
     <canvas id="g_canvas" width="320" height="320" style="border: 1px solid black; position:fixed; top:8px; left:8px">
     Sorry, but your browser does not support the HTML5 canvas tag.
     </canvas>
-
-    <div id="output"></div>
+  
+    <div class="inventory">
+      무기 인벤토리
+    </div>
+    <div class="item--list">
+      <div class="item--img item-1"></div>
+      <div class="item--img item-2"></div>
+      <div class="item--img item-3"></div>
+      <div class="item--img item-4"></div>
+      <div class="item--img item-5"></div>
+    </div>
+    <div class="status">
+    </div>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
 
     <script src="globals.js"></script>
     <script src="consts.js"></script>
@@ -39,6 +108,8 @@
     <script src="Tombstone.js"></script>
     <script src="Shotgun.js"></script>
     <script src="BaseballBat.js"></script>
+    <script src="BaseballBatDoruko.js"></script>
+    <script src="GrenadeSnail.js"></script>
     
     <script src="update.js"></script>
     <script src="render.js"></script>
@@ -47,6 +118,7 @@
     <script src="main.js"></script>
 
     <script src="ASTEROIDS.js"></script>
+    <script src="TradeNft.js"></script>
 
   </body>
 </html>

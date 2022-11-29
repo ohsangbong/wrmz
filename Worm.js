@@ -26,7 +26,8 @@ function Worm(descr) {
     // Create the arsenal
     this.weapons = {'bazooka': new Bazooka(), 'grenade': new Grenade(),
         'airstrike': new Airstrike(), 'dynamite': new Dynamite(), 
-        'shotgun': new Shotgun(), 'baseballBat' : new BaseballBat()};
+        'shotgun': new Shotgun(), 'baseballBat' : new BaseballBat(), 'baseballBatDoruko': new BaseballBatDoruko(),
+        'grenadeSnail': new GrenadeSnail()};
     this.currentWeapon = new Bazooka();
 };
 
@@ -45,6 +46,8 @@ Worm.prototype.KEY_AIRSTRIKE = '3'.charCodeAt(0);
 Worm.prototype.KEY_DYNAMITE = '4'.charCodeAt(0);
 Worm.prototype.KEY_SHOTGUN = '5'.charCodeAt(0);
 Worm.prototype.KEY_BASEBALLBAT = '6'.charCodeAt(0);
+Worm.prototype.KEY_BASEBALLBATDORUKO = '7'.charCodeAt(0);
+Worm.prototype.KEY_GRENADESNAIL = '8'.charCodeAt(0);
 Worm.prototype.KEY_JETPACK = 'J'.charCodeAt(0);
 
 Worm.prototype.RESET_ROTATION = Math.PI/2;
@@ -428,6 +431,8 @@ Worm.prototype.chooseWeapon = function() {
     if(keys[this.KEY_DYNAMITE]) this.currentWeapon = this.weapons.dynamite;
     if(keys[this.KEY_SHOTGUN]) this.currentWeapon = this.weapons.shotgun;
     if(keys[this.KEY_BASEBALLBAT]) this.currentWeapon = this.weapons.baseballBat;
+    if(keys[this.KEY_BASEBALLBATDORUKO]) this.currentWeapon = this.weapons.baseballBatDoruko;
+    if(keys[this.KEY_GRENADESNAIL]) this.currentWeapon = this.weapons.grenadeSnail;
 };
 
 Worm.prototype.render = function (ctx) {

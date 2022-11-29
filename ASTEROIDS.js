@@ -145,42 +145,43 @@ function renderSimulation(ctx) {
 
 var g_images = {};
 
+var requiredImages = {
+    startScreenWorm1 : "images/startScreenWorm1.png",
+    startScreenWorm2 : "images/startScreenWorm2.png",
+    map_space    : "images/maps/map_space.png",
+    map_candy : "images/maps/map_candy.png",
+    map_urban : "images/maps/map_urban.png",
+    map_trees : "images/maps/map_trees.png",
+    background : "images/bg.jpg",
+    bkgnd : "images/space.png",
+
+    worm   : "images/worm.png",
+    wormFlipped: "images/wormFlipped.png",
+    tombstone : "images/tombstone.png",
+    jetpackFlying : "images/jetpackFlying.png",
+    jetpack : "images/jetpack.png",
+    fuelMeter : "images/fuelMeter.png",
+    
+    powerBar : "images/powerBar.png",
+    target   : "images/crosshair.png",
+    explosion : "images/explosion.png",
+    grenade : "images/grenade.png",
+    grenadeSnail : "images/grenadeSnail.png",
+    dynamite : "images/dynamite.png",
+    bazooka : 'images/bazooka.png',
+    airstrike : 'images/airstrike.png',
+    launcher : "images/rocket_launcher.png",
+    detonator : "images/Detonator.png",
+    shotgun : "images/shotgun.png",
+
+    baseballBat : "images/baseballBat.png",
+    baseballBatDoruko : "images/baseballBatDoruko.png",
+    fuelMeter : "images/fuelMeter.png",
+    bkgnd : "images/space.png",
+    sky : "images/bluesky.png"
+};
+
 function requestPreloads() {
-
-    var requiredImages = {
-        startScreenWorm1 : "images/startScreenWorm1.png",
-        startScreenWorm2 : "images/startScreenWorm2.png",
-        map_space    : "images/maps/map_space.png",
-        map_candy : "images/maps/map_candy.png",
-        map_urban : "images/maps/map_urban.png",
-        map_trees : "images/maps/map_trees.png",
-        background : "images/bg.jpg",
-        bkgnd : "images/space.png",
-
-		worm   : "images/worm.png",
-        wormFlipped: "images/wormFlipped.png",
-        tombstone : "images/tombstone.png",
-        jetpackFlying : "images/jetpackFlying.png",
-        jetpack : "images/jetpack.png",
-        fuelMeter : "images/fuelMeter.png",
-        
-        powerBar : "images/powerBar.png",
-        target   : "images/crosshair.png",
-        explosion : "images/explosion.png",
-        grenade : "images/grenade.png",
-        dynamite : "images/dynamite.png",
-        bazooka : 'images/bazooka.png',
-        airstrike : 'images/airstrike.png',
-        launcher : "images/rocket_launcher.png",
-        detonator : "images/Detonator.png",
-        shotgun : "images/shotgun.png",
-
-        baseballBat : "images/baseballBat.png",
-        fuelMeter : "images/fuelMeter.png",
-        bkgnd : "images/space.png",
-        sky : "images/bluesky.png"
-    };
-
     imagesPreload(requiredImages, g_images, preloadDone);
 }
 
@@ -189,6 +190,7 @@ function requestPreloads() {
 var g_sprites = {};
 
 function preloadDone() {
+    console.log("preload Done");
     g_sprites.startScreenWorm1 = new Sprite(g_images.startScreenWorm1);
     g_sprites.startScreenWorm2 = new Sprite(g_images.startScreenWorm2);
 
@@ -209,6 +211,7 @@ function preloadDone() {
     g_sprites.Bazooka = new Sprite(g_images.target);
     g_sprites.Bazooka.scale = 0.5;
     g_sprites.Grenade = new Sprite(g_images.grenade);
+    g_sprites.GrenadeSnail = new Sprite(g_images.grenadeSnail);
     g_sprites.Airstrike = new Sprite(g_images.grenade);
     g_sprites.Dynamite = new Sprite(g_images.dynamite);
     g_sprites.BazookaGun = new Sprite(g_images.bazooka);
@@ -217,6 +220,7 @@ function preloadDone() {
     g_sprites.Detonator = new Sprite(g_images.detonator);
     g_sprites.Shotgun = new Sprite(g_images.shotgun);
     g_sprites.baseballBat = new Sprite(g_images.baseballBat);
+    g_sprites.baseballBatDoruko = new Sprite(g_images.baseballBatDoruko);
 
     entityManager.init();
     createInitialWorms();
@@ -258,4 +262,3 @@ function renderSimulation(ctx) {
 }
 
 // Kick it off
-requestPreloads();

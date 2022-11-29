@@ -93,7 +93,6 @@ selectNextWorm: function() {
     var cy = this._worms[this._activeTeam][this._indexes[this._activeTeam]].cy;
     this._map[0].focusOn(cx, cy);
     
-    console.log("currently active: worm " + this._indexes[this._activeTeam] + " of team " + this._activeTeam);
 },
 
 destroyMap: function(cx, cy, r) {
@@ -135,7 +134,6 @@ fireWeapon: function(cx, cy, velX, velY, rotation, weapon, shotPower, orientatio
     // the worm's weapon is passed to the function as a string
     var fn = window[weapon];
     
-    console.log("entityManager:"+cx+","+cy);
     this._weapons.push(new fn({
         cx   : cx,
         cy   : cy,
@@ -226,7 +224,7 @@ update: function(du) {
                         scale: aCategory[i].damageRadius / 20
                     });
 
-                    if(!(aCategory[i] instanceof BaseballBat))
+                    if(!(aCategory[i] instanceof BaseballBat || aCategory[i] instanceof BaseballBatDoruko))
                         this._animations.push(animation);
                 }
 
